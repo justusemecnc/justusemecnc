@@ -39,3 +39,7 @@ public:
 };
 }
 ```
+
+<br>
+
+<img src="https://capsule-render.vercel.app/api?type=waving&color=gradient&customColor=0:00fff7,100:ff00ff&height=180&section=header&text=justusemecnc&fontSize=42&fontColor=fff&animation=twinkling"/>
