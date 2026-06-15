@@ -1,0 +1,35 @@
+name: generate-crt-stats
+
+on:
+  schedule:
+    - cron: "0 */24 * * *"
+  workflow_dispatch:
+  push:
+    branches: [main]
+
+permissions:
+  contents: write
+
+jobs:
+  generate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: LuciNyan/pixel-profile/action@main
+        with:
+          crt_outputs: |
+            dist/github-stats-crt?username=justusemecnc&include_all_commits=true
+
+      - name: move to assets/stats
+        run: |
+          mkdir -p assets/stats
+          mv dist/github-stats-crt.png assets/stats/github-stats-crt.png
+
+      - name: commit stats asset
+        run: |
+          git config user.name github-actions
+          git config user.email github-actions@github.com
+          git add assets/stats/github-stats-crt.png
+          git diff --staged --quiet || git commit -m "update github-stats-crt"
+          git push
