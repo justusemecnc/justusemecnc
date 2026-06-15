@@ -40,6 +40,6 @@ public:
 }
 ```
 
-<br>
+<hr>
 
-<img src="https://capsule-render.vercel.app/api?type=waving&color=gradient&customColor=0:00fff7,100:ff00ff&height=180&section=header&text=justusemecnc&fontSize=42&fontColor=fff&animation=twinkling"/>
+![GitHub Activity](https://github-readme-activity-graph.vercel.app/graph?username=justusemecnc&theme=react&hide_border=true&area=true&color=00fff7&line=ff00ff&point=ffffff&bg_color=0a0a0f)
